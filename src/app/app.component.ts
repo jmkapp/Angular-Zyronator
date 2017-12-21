@@ -5,8 +5,8 @@ import { UserListsService } from './discogs-user-lists/user-lists.service';
 @Component({
   selector: 'app-root',
   template: `
-  <div><h1>{{pageTitle}}</h1>
-    <app-user-lists></app-user-lists>
+  <div class='container'>
+    <router-outlet></router-outlet>
   </div>
   `,
   providers: [ UserListsService ]

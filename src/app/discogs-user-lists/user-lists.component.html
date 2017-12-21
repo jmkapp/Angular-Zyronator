@@ -27,11 +27,13 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor='let discogUserList of filteredDiscogsUserLists'>
-              <td>{{discogUserList.name}}</td>
-              <td>{{discogUserList.description}}</td>
-              <td>{{discogUserList.date_Added | date:"MMM d, y h:mm a"}}</td>
-              <td>{{discogUserList.date_Changed | date:"MMM d, y h:mm a"}}</td>
+            <tr *ngFor='let discogsUserList of filteredDiscogsUserLists'>
+              <td><a [routerLink]="['/discogsuserlists', discogsUserList.id]">
+                {{discogsUserList.name}}
+              </a></td>
+              <td>{{discogsUserList.description}}</td>
+              <td>{{discogsUserList.date_Added | date:"MMM d, y h:mm a"}}</td>
+              <td>{{discogsUserList.date_Changed | date:"MMM d, y h:mm a"}}</td>
             </tr>
         </tbody>
       </table>
