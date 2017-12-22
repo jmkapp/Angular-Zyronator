@@ -2,6 +2,23 @@
   <div class='panel-heading'>
     {{discogsListDetail.name}}
   </div>
+  <div class='table-responsive'>
+    <table class='table'
+            *ngIf='listItems && listItems.length'>
+    <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr *ngFor='let listItem of listItems'>
+          <td><a href="{{listItem.uri}}" target="_blank">
+              {{listItem.display_title}}
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div class='panel-footer'>
     <a class='btn btn-default' (click)='onBack()' style='width:80px'>
       <i class='glyphicon glyphicon-chevron-left'></i> Back

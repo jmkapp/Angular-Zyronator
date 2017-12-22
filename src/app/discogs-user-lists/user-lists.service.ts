@@ -1,3 +1,4 @@
+import { IDiscogsListDetail } from './../discogs-list-entry/discogs-list-detail';
 import { IDiscogsUserList } from './discogs-user-list';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -14,7 +15,13 @@ export class UserListsService {
 
   getProducts(): Observable<IDiscogsUserList[]> {
     return this._http.get<IDiscogsUserList[]>(this._productUrl)
-    .do(data => console.log('All: ' + JSON.stringify(data)))
+    .do(data => console.log('Discogs User Lists: ' + JSON.stringify(data)))
+    .catch(this.handleError);
+  }
+
+  getListDetail(listId: number): Observable<IDiscogsListDetail> {
+    return this._http.get<IDiscogsListDetail>(this._productUrl + '/' + listId)
+    .do(data => console.log('Discogs User List Detail: ' + JSON.stringify(data)))
     .catch(this.handleError);
   }
 
