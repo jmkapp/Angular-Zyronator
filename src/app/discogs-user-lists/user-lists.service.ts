@@ -13,7 +13,7 @@ export class UserListsService {
 
   constructor(private _http: HttpClient) {}
 
-  getProducts(): Observable<IDiscogsUserList[]> {
+  getDiscogsUserLists(): Observable<IDiscogsUserList[]> {
     return this._http.get<IDiscogsUserList[]>(this._productUrl)
     .do(data => console.log('Discogs User Lists: ' + JSON.stringify(data)))
     .catch(this.handleError);

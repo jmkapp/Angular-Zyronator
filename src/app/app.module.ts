@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserListsComponent } from './discogs-user-lists/user-lists.component';
 import { DiscogsListEntriesComponent } from './discogs-list-entry/discogs-list-entries.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListsComponent,
-    DiscogsListEntriesComponent
+    DiscogsListEntriesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,8 +23,9 @@ import { DiscogsListEntriesComponent } from './discogs-list-entry/discogs-list-e
     RouterModule.forRoot([
       { path: 'discogsuserlists', component: UserListsComponent},
       { path: 'discogsuserlists/:id', component: DiscogsListEntriesComponent},
-      { path: '', redirectTo: 'discogsuserlists', pathMatch: 'full'},
-      { path: '**', redirectTo: 'discogsuserlists', pathMatch: 'full'}
+      { path: '', component: LoginComponent}
+      // { path: '', redirectTo: 'login', pathMatch: 'full'},
+      // { path: '**', redirectTo: 'login', pathMatch: 'full'}
     ])
   ],
   providers: [],

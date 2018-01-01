@@ -32,7 +32,7 @@ export class UserListsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._userListsService.getProducts()
+    this._userListsService.getDiscogsUserLists()
             .subscribe(lists => {
               this.discogsUserLists = lists;
               this.filteredDiscogsUserLists = this.discogsUserLists;
