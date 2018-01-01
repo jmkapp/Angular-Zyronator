@@ -1,5 +1,7 @@
 # Zyronator
 
+This project is not working, it is uploaded for reference purposes only.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
 ## Development server
